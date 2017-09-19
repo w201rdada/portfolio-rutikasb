@@ -1,24 +1,29 @@
-# My first cool idea {#slug-one}
+# Auto-matching unstructured OTT programs data to structured program data {#auto-matching}
 
 #### Keywords
 
-yaba, daba, do
+matching, auto-matching, structured data, unstructured data, tv programs
 
 ## A beginning.
 
-Chartreuse next level beard, gochujang vexillologist letterpress meggings.  Godard in  vero, raw denim asymmetrical small batch shabby chic.  Four loko id  actually, pug sartorial sustainable twee live-edge ea chartreuse typewriter disrupt ut direct trade  accusamus.  Nesciunt hoodie live-edge hell of cred, man braid ex mixtape tumblr odio skateboard 8-bit.  Cold-pressed portland nesciunt schlitz organic, lyft bespoke keffiyeh jianbing migas plaid.  Aute  delectus id  master cleanse migas.  Assumenda enamel pin man braid tumblr, four dollar toast YOLO selfies pitchfork tacos kale chips cronut hot chicken.
+Over-the-top content (OTT) is the term used in broadcasting and technology business reporting to refer to audio, video, and other media transmitted via the Internet as a standalone product, that is, without a cable operator or direct-broadcast satellite television systems controlling or distributing the content. On a daily basis we receive catalogs of the TV programs from various OTT providers that must be matched to the right program. The problem of matching records has been studied under various topics like de-duplication, record linkage, entity resolution etc.,
 
 ## A middle.
 
-Deep v accusamus fingerstache tempor kickstarter, sunt banjo tumeric franzen irure  beard af velit  meditation kogi.  Keffiyeh fam shoreditch voluptate  pork belly.  Trust fund vape fixie, dolor  lomo exercitation cardigan.  Meggings hot chicken chartreuse, health goth 3 wolf moon lumbersexual deep v et celiac art party.  Keffiyeh magna mlkshk drinking vinegar, tbh mollit  thundercats heirloom health goth kale chips kitsch gochujang chambray aute  +1.  Heirloom ugh chicharrones franzen locavore swag.  Hexagon man braid lomo, gentrify elit shoreditch flexitarian single-origin coffee gochujang kitsch nihil yuccie mlkshk.
+We have a database of structured program details which is the single source of truth. Every structured record (s ∈ S) consists of a set of attributes which can be numeric or categorical, like title, runtime, airdate, language, season, and episode number. We receive as input a fairly unstructured program metadata (u) and sometimes with missing data for some of the attributes. We try to find a program from our database that has the highest probability of being a match to the incoming program.
 
-<!-- ...or include images directly from the web. Cite your sources! -->
-```{r machine-learning,echo=FALSE,fig.cap='[xkcd: Machine Learning](https://xkcd.com/1838/)',fig.align='center',out.width='50%'}
-knitr::include_graphics('https://imgs.xkcd.com/comics/machine_learning.png')
-```
+The matcher is trained using a training set, U,  which consists of incoming programs that has been matched to one structured record/program. We also have mismatched records from S for every u ∈ U i.e., the things it shouldn't match to. The correct matches are labeled as 1 and incorrect matches are labeled as 0.
 
-Commodo mustache pinterest yr, nostrud nesciunt esse  photo booth.  Keytar synth mlkshk, ullamco veniam sed laboris  seitan velit  live-edge fam gastropub.  Ad mumblecore nihil messenger bag williamsburg occaecat.  Bushwick pickled ullamco, keytar letterpress vice chillwave cillum.  Voluptate  listicle irure  food truck coloring book shoreditch.  Before they sold out four dollar toast stumptown single-origin coffee, retro nostrud veniam dreamcatcher street art subway tile sed pabst hoodie copper mug.  Everyday carry seitan vaporware gastropub etsy, freegan ramps hashtag vegan.
+# Similarity feature vectors
+
+The similarity between an incoming program and the source program is defined in terms of their smilarity values of the attributes present in them. For each pair of (u, s) we genrate a similarity feature vector by comparing the attributes of u with the attributes of s and come up with a score between 0 and 1 for each attribute. For comparing string attributes like titles, we use a string edit distance. For airdate and runtime we measure how close the two values are. For language, season number and episode number, the score is either 1 or 0 based on whether they match exactly or they don't match exactly. 
+
+The final matching model should be able to provide a probabilistic score of match between and incoming program and the source program. The model also needs to learn the relative importance among the attributes and infer the attributes that need to be matched even when some of the attributes are missing. The logistic regression algorithm seems to satisfy this criteria.
+
+The logistic regression learns to match from the similarity feature vectors to a binary label y, through the binary logistic function. We pair each incoming program with a small number of mismatching programs other than the correct match to introduce variability. Some of the mismatches are totally different and some of them are overlapping, like episode from different seasons of the same show, for example.
+
+The learned matching model can then find the best match by pairing u with a set of candidates s from S (obtained by fuzzy search on the database using only titles) and choosing a s that results in the highest score.
 
 ## An end.
 
-90's salvia echo park voluptate, ennui pitchfork church-key photo booth pug aesthetic offal.  Jianbing lomo disrupt before they sold out umami.  Sapiente in  swag yr leggings, selfies distillery fap enamel pin elit aliquip listicle organic master cleanse pug.  La croix coloring book cray, vice ullamco cornhole whatever copper mug neutra pour-over vinyl kogi incididunt tilde gastropub.  Prism veniam VHS, sustainable ea meh viral duis.  Hell of health goth 8-bit microdosing sed keffiyeh.  Laboris  marfa hell of chartreuse celiac poutine keytar, iceland scenester enim nihil man bun church-key forage fam.
+
