@@ -4,26 +4,26 @@
 
 matching, auto-matching, structured data, unstructured data, tv programs
 
-## A beginning.
+## A beginning
 
 Over-the-top content (OTT) is the term used in broadcasting and technology business reporting to refer to audio, video, and other media transmitted via the Internet as a standalone product, that is, without a cable operator or direct-broadcast satellite television systems controlling or distributing the content. On a daily basis we receive catalogs of the TV programs from various OTT providers that must be matched to the right program. The problem of matching records has been studied under various topics like de-duplication, record linkage, entity resolution etc.,
 
-## A middle.
+## A middle
 
-We have a database of structured program details which is the single source of truth. Every structured record (s ∈ S) consists of a set of attributes which can be numeric or categorical, like title, runtime, airdate, language, season, and episode number. We receive as input a fairly unstructured program metadata (u) and sometimes with missing data for some of the attributes. We try to find a program from our database that has the highest probability of being a match to the incoming program.
+We have a database of structured program details which is the single source of truth. Every structured record (s ∈ S) consists of a set of attributes which can be numeric or categorical in nature, like title, runtime, airdate, language, season, and episode number. We receive as input, a fairly unstructured program metadata (u) and sometimes with missing data for some of the attributes. We try to find a program from our database that has the highest probability of being a match to the incoming program.
 
-The matcher is trained using a training set, U,  which consists of incoming programs that has been matched to one structured record/program. We also have mismatched records from S for every u ∈ U i.e., the things it shouldn't match to. The correct matches are labeled as 1 and incorrect matches are labeled as 0.
+The matcher is trained using a training set, U,  which consists of incoming programs that has been matched to one structured record/program. We also have mismatched records from S for every u ∈ U i.e., the things it shouldn't match to. The correct matches are labeled as 1 and the incorrect matches are labeled as 0.
 
-# Similarity feature vectors
+### Similarity feature vectors
 
-The similarity between an incoming program and the source program is defined in terms of their smilarity values of the attributes present in them. For each pair of (u, s) we genrate a similarity feature vector by comparing the attributes of u with the attributes of s and come up with a score between 0 and 1 for each attribute. For comparing string attributes like titles, we use a string edit distance. For airdate and runtime we measure how close the two values are. For language, season number and episode number, the score is either 1 or 0 based on whether they match exactly or they don't match exactly. 
+The similarity between an incoming program and the source program is defined in terms of the smilarity values of the attributes present in them. For each pair of (u, s) we genrate a similarity feature vector by comparing the attributes of u with the attributes of s and come up with a score between 0 and 1 for each attribute. For comparing string attributes like titles, we use a string edit distance. For airdate and runtime we measure how close the two values are. For language, season number and episode number, the score is either 1 if they match exactly or 0 if they don't match exactly. 
 
-The final matching model should be able to provide a probabilistic score of match between and incoming program and the source program. The model also needs to learn the relative importance among the attributes and infer the attributes that need to be matched even when some of the attributes are missing. The logistic regression algorithm seems to satisfy this criteria.
+The final matching model should be able to provide a probabilistic score of match between an incoming program and the source program and also needs to learn the relative importance of the attributes. The logistic regression algorithm seems to satisfy this criteria.
 
 The logistic regression learns to match from the similarity feature vectors to a binary label y, through the binary logistic function. We pair each incoming program with a small number of mismatching programs other than the correct match to introduce variability. Some of the mismatches are totally different and some of them are overlapping, like episode from different seasons of the same show, for example.
 
-The learned matching model can then find the best match by pairing u with a set of candidates s from S (obtained by fuzzy search on the database using only titles) and choosing a s that results in the highest score.
+The learned matching model can then find the best match by pairing u with a set of candidates s from S (obtained by a fuzzy search on the database using only titles) and choosing a s that results in the highest score.
 
-## An end.
+## An end
 
-
+The proposed solution takes into account matches as well as mismatches between the program attributes and learns to infer relative importance of different attributes in the values. The solution works well when all of the data or attributes expected for a program are present. But more often than we'd like, a lot of data is missing. The system should be taught to treat missing data differently than the mismatching data. This is something we'd like to include in future improvements. While the solution proposed here is in the context of TV programs, it applies to any domain where there is an idea of an offer and a repository of structured data. In future, we'd like to test the system with such different domains.
