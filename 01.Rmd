@@ -4,11 +4,11 @@
 
 matching, auto-matching, structured data, unstructured data, tv programs
 
-## A beginning
+## Introduction
 
 Over-the-top content (OTT) is the term used in broadcasting and technology business reporting to refer to audio, video, and other media transmitted via the Internet as a standalone product, that is, without a cable operator or direct-broadcast satellite television systems controlling or distributing the content. On a daily basis we receive catalogs of the TV programs from various OTT providers that must be matched to the right program. The problem of matching records has been studied under various topics like de-duplication, record linkage, entity resolution etc.,
 
-## A middle
+## Matching
 
 We have a database of structured program details which is the single source of truth. Every structured record (s ∈ S) consists of a set of attributes which can be numeric or categorical in nature, like title, runtime, airdate, language, season, and episode number. We receive as input, a fairly unstructured program metadata (u) and sometimes with missing data for some of the attributes. We try to find a program from our database that has the highest probability of being a match to the incoming program.
 
@@ -24,6 +24,6 @@ The logistic regression learns to match from the similarity feature vectors to a
 
 The learned matching model can then find the best match by pairing u with a set of candidates s from S (obtained by a fuzzy search on the database using only titles) and choosing a s that results in the highest score.
 
-## An end
+## Summary and future work
 
 The proposed solution takes into account matches as well as mismatches between the program attributes and learns to infer relative importance of different attributes in the values. The solution works well when all of the data or attributes expected for a program are present. But more often than we'd like, a lot of data is missing. The system should be taught to treat missing data differently than the mismatching data. This is something we'd like to include in future improvements. While the solution proposed here is in the context of TV programs, it applies to any domain where there is an idea of an offer and a repository of structured data. In future, we'd like to test the system with such different domains.
