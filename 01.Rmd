@@ -1,4 +1,4 @@
-# Auto-matching unstructured OTT programs data to structured program data {#auto-matching}
+# Better auto-matcher for matching unstructured programs data to structured program data {#auto-matching}
 
 #### Keywords
 
@@ -6,7 +6,7 @@ matching, auto-matching, structured data, unstructured data, tv programs
 
 ## Introduction
 
-Over-the-top content (OTT) is the term used in broadcasting and technology business reporting to refer to audio, video, and other media transmitted via the Internet as a standalone product, that is, without a cable operator or direct-broadcast satellite television systems controlling or distributing the content. On a daily basis we receive catalogs of the TV programs from various OTT providers that must be matched to the right program. The problem of matching records has been studied under various topics like de-duplication, record linkage, entity resolution etc.,
+Over-the-top content (OTT) is the term used in broadcasting and technology business reporting to refer to audio, video, and other media transmitted via the Internet as a standalone product, that is, without a cable operator or direct-broadcast satellite television systems controlling or distributing the content. On a daily basis my company receives catalogs of the TV programs from various OTT providers that must be matched to the programs in the company's database. The data my company maintains is an industry standard and the matched content is sold back to the customers who rely on it to power their applications. The problem of matching records has been studied under various topics like de-duplication, record linkage, entity resolution etc.,
 
 ## Matching
 
@@ -16,7 +16,7 @@ The matcher is trained using a training set, U,  which consists of incoming prog
 
 ### Similarity feature vectors
 
-The similarity between an incoming program and the source program is defined in terms of the smilarity values of the attributes present in them. For each pair of (u, s) we genrate a similarity feature vector by comparing the attributes of u with the attributes of s and come up with a score between 0 and 1 for each attribute. For comparing string attributes like titles, we use a string edit distance. For airdate and runtime we measure how close the two values are. For language, season number and episode number, the score is either 1 if they match exactly or 0 if they don't match exactly. 
+The similarity between an incoming program and the source program is defined in terms of the similarity values of the attributes present in them. For each pair of (u, s) we genrate a similarity feature vector by comparing the attributes of u with the attributes of s and come up with a score between 0 and 1 for each attribute. For comparing string attributes like titles, we use a string edit distance. For airdate and runtime we measure how close the two values are. For language, season number and episode number, the score is either 1 if they match exactly or 0 if they don't match exactly. 
 
 The final matching model should be able to provide a probabilistic score of match between an incoming program and the source program and also needs to learn the relative importance of the attributes. The logistic regression algorithm seems to satisfy this criteria.
 
@@ -26,4 +26,4 @@ The learned matching model can then find the best match by pairing u with a set 
 
 ## Summary and future work
 
-The proposed solution takes into account matches as well as mismatches between the program attributes and learns to infer relative importance of different attributes in the values. The solution works well when all of the data or attributes expected for a program are present. But more often than we'd like, a lot of data is missing. The system should be taught to treat missing data differently than the mismatching data. This is something we'd like to include in future improvements. While the solution proposed here is in the context of TV programs, it applies to any domain where there is an idea of an offer and a repository of structured data. In future, we'd like to test the system with such different domains.
+The proposed solution takes into account matches as well as mismatches between the program attributes and learns to infer relative importance of different attributes in the values. The solution works well when all of the data or attributes expected for a program are present. But more often than we'd like, a lot of data is missing. The system should be taught to treat missing data differently than the mismatching data. This is something we'd like to include in future improvements. And also explore some alternate solutions using neural networks rather than regressors. While the solution proposed here is in the context of TV programs, it applies to any domain where there is an idea of an offer and a repository of structured data. Take for example an e-commerce site trying to sell a laptop. The site gets offers from many vendors and they need to match it to their own data in order to show different offers to the customers. In future, we'd like to test the system with such different domains.
