@@ -1,7 +1,7 @@
 ---
 title: "W201 Portfolio"
-author: "Oski Bear"
-date: "MIDS Summer 2017"
+author: "Rutika Banakar"
+date: "MIDS Fall 2017"
 site: bookdown::bookdown_site
 documentclass: book
 ---
@@ -14,33 +14,24 @@ library(magrittr)
 
 # Welcome!
 
-<!-- You can include images saved within your repo... -->
-```{r hello-world,echo=FALSE,fig.cap='Hello World!',fig.align='center',out.width='50%'}
-knitr::include_graphics('img/hello-world.png')
-```
+The site showcases a couple of ideas/problems from Rutika Banakar, a student of MIDS program at School of Information, UC Berkeley. And proposed solutions to these problems which utilizes the power of data science.
 
-Pariatur sapiente anim  waistcoat bicycle rights.  Cupidatat  chambray portland direct trade, XOXO odio gochujang banjo deep v sustainable.  Sint  jianbing DIY humblebrag heirloom exercitation ennui fanny pack.  Dolore small batch lomo, godard slow-carb odio exercitation organic cred cray la croix vinyl nisi hot chicken.  Gentrify schlitz stumptown fam, cray hoodie excepteur  hammock kinfolk 8-bit hell of plaid.  Helvetica hashtag pinterest typewriter, tbh vape vero farm-to-table.  Laboris  bitters aliqua small batch.
-
-<!-- Below this line is just examples of how you can embed video from Google Drive. First you have to enable sharing, then just get the object ID which is that long string between d/ and /preview and will also be appended to any sharing link you generate for your video. -->
 <p>
-```{r hello-benji,echo=FALSE,fig.cap='Hello Benjamin Franklin!',fig.align='center'}
-knitr::include_url('https://drive.google.com/file/d/0B6bobRDQR96iVEV3SXJJal9CczQ/preview')
-```
 
-### Abstract of my first cool idea
+### Smart auto-matcher
 
-Pop-up occupy labore, pug tofu nisi franzen YOLO tilde tumblr deep v nulla  aliqua.  Sapiente stumptown et lo-fi art party.  Eu  snackwave glossier, poutine crucifix tattooed labore thundercats hexagon tempor brunch single-origin coffee synth four loko.  Velit  beard ex etsy migas, tempor hashtag.  Live-edge fap yr food truck, heirloom snackwave tempor laborum green juice man bun selvage sriracha gastropub.  Before they sold out incididunt godard cupidatat  exercitation street art health goth ullamco, flannel dolore kombucha bespoke.  Pok pok tilde mixtape, magna swag iceland tote bag gentrify dolor  delectus.
+Over-the-top content (OTT) is the term used in the broadcasting and technology business reporting to refer to audio, video, and other media transmitted via the Internet as a standalone product, that is, without a cable operator or direct-broadcast satellite television systems controlling or distributing the content. On a daily basis my company receives catalogs of the TV programs from various OTT providers that must be matched to the programs in the company's database. The data my company maintains is an industry standard and the matched content is sold back to the customers who rely on it to power their applications. We can leverage the power of data science and machine learning to auto match the incoming data with our database and hence reduce time and oney spent on hand-matching these records.
 
-### Abstract of my second cool idea
+### 
 
-Vero dolor  franzen letterpress.  Taxidermy pork belly messenger bag, deserunt  aliqua irure  photo booth neutra banh mi fanny pack.  Butcher fam heirloom marfa.  Tilde reprehenderit  snackwave tempor.  Qui  pop-up kitsch dolor.  Crucifix consectetur culpa  lumbersexual salvia exercitation small batch.  Pop-up duis  id  semiotics before they sold out kombucha raclette, twee selvage pitchfork.
-  
-### Abstract of my third cool idea
-
-Activated charcoal succulents ex, pop-up minim neutra pork belly nulla  helvetica semiotics dolor  magna jianbing.  Asymmetrical franzen humblebrag, venmo kale chips offal velit  distillery blog copper mug exercitation pariatur helvetica tacos officia.  Trust fund etsy commodo umami excepteur  lo-fi, locavore humblebrag dolore artisan cliche sustainable chartreuse.  Mustache pork belly kitsch blue bottle jean shorts, intelligentsia hammock consequat hoodie heirloom single-origin coffee.  Godard nulla  yr, cray taxidermy vice pug hashtag ad eiusmod subway tile flexitarian.  Tofu magna laboris  thundercats neutra, mumblecore truffaut small batch hashtag chillwave listicle ramps eiusmod selfies meh.  Bushwick butcher cupidatat  hella organic.
+The devastation from hurricanes Harvey, Irma, and Maria and the dozens of wildfires that raged across West U.S. in 2017 have resulted in one of the costliest string of weather events in U.S. history. According to early estimates, over the course of few weeks, the hurricanes and wildfires have left a trail of damage that could add up to nearly $300 billion. The evidence of climate change is undeniable and offsetting your CO2 emissions is a practical and immediate way to take ownership of your personal contribution to climate change. I wish to build a tool for every environmentally cautious person to help them monitor their carbon footprint and reduce it. Small changes from everyone can add up to great benefits.
 
 ## About the author
 
-Sustainable aute  gochujang, messenger bag vero dolor  blog pork belly knausgaard.  Tacos brooklyn lumbersexual keytar, literally chambray iceland street art pickled master cleanse in  roof party activated charcoal jean shorts craft beer.  Semiotics tempor enamel pin nesciunt, aliquip live-edge keytar yr street art waistcoat cray everyday carry eu  sint  pariatur.  Aliquip anim  godard leggings, flexitarian direct trade  humblebrag.  Non  ennui fashion axe nesciunt, poke af kinfolk direct trade  franzen banh mi.  Craft beer laborum crucifix pork belly retro, health goth tacos est  godard four dollar toast tousled bushwick exercitation nihil normcore.  Semiotics meggings pok pok church-key whatever art party, truffaut franzen poke.
+```{r hello-world,echo=FALSE,fig.cap='Rutika Banakar',fig.align='center',out.width='50%'}
+knitr::include_graphics('img/profile.jpg')
+```
+
+Rutika graduated with a Bachelors degree in Computer Science and Engineering from Vishweshwaraya Technological University, India in 2011 and currently works as a Software Engineer at Gracenote, a Nielsen company in Emeryville, CA. When not working she loves to bake and hike around the many awesome trails in bay area.
 
 *Updated: `r Sys.Date()`*
