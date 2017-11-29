@@ -19,7 +19,7 @@ library(magrittr)
 The site showcases a couple of ideas/problems from Rutika Banakar, a student of MIDS program at School of Information, UC Berkeley. And proposed solutions to these problems which utilizes the power of data science.
 
 ```{r hello, echo=FALSE, fig.cap='Rutika Banakar pitch', fig.align='center'}
-https://drive.google.com/a/berkeley.edu/file/d/1799B0_2IMt7Xsgz-4vTfAUjOjDRyIuzx/view?usp=sharing
+knitr::include_url('https://drive.google.com/a/berkeley.edu/file/d/1799B0_2IMt7Xsgz-4vTfAUjOjDRyIuzx/view?usp=sharing')
 ```
 
 <p>
