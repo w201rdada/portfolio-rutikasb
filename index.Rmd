@@ -12,7 +12,7 @@ library(magrittr)
 ```
 
 
-# Welcome!
+# Welcome! {-}
 
 The site showcases a couple of ideas/problems from Rutika Banakar, a student of MIDS program at School of Information, UC Berkeley. And proposed solutions to these problems which utilizes the power of data science.
 
@@ -26,7 +26,7 @@ Over-the-top content (OTT) is the term used in the broadcasting and technology b
 
 The devastation from hurricanes Harvey, Irma, and Maria and the dozens of wildfires that raged across West U.S. in 2017 have resulted in one of the costliest string of weather events in U.S. history. According to early estimates, over the course of few weeks, the hurricanes and wildfires have left a trail of damage that could add up to nearly $300 billion. The evidence of climate change is undeniable and offsetting your CO2 emissions is a practical and immediate way to take ownership of your personal contribution to climate change. I wish to build a tool for every environmentally cautious person to help them monitor their carbon footprint and reduce it. Small changes from everyone can add up to great benefits.
 
-## About the author
+## About the author {-}
 
 ```{r hello-world,echo=FALSE,fig.cap='Rutika Banakar',fig.align='center',out.width='50%'}
 knitr::include_graphics('img/profile.jpg')
