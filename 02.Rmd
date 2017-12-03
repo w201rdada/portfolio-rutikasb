@@ -6,23 +6,23 @@ climate change, global warming, increasing temperatures
 
 ## Climate change is real
 
-Global climate change has already had observable effects on the environment [@nasa-climate-change]. The devastation from recent hurricanes Harvey, Irma, and Maria and the dozens of wildfires that raged across West U.S. have resulted in one of the costliest string of weather events in U.S. history. According to early estimates, over the course of few weeks, the hurricanes and wildfires have left a trail of damage that could add up to nearly $300 billion [@climate-change-damage]. The evidence of climate change is undeniable and offsetting your CO2 emissions is a practical and immediate way to take ownership of your personal contribution to climate change. This is where my application/tool will come in.
+Global climate change has already had observable effects on the environment [@nasa-climate-change]. The devastation from recent hurricanes Harvey, Irma, and Maria and the dozens of wildfires that raged across western U.S. have resulted in one of the costliest strings of weather events in U.S. history. According to early estimates, over the course of a few weeks, the hurricanes and wildfires left a trail of damage that could add up to nearly $300 billion [@climate-change-damage]. The evidence of climate change is undeniable and offsetting your CO2 emissions is a practical and immediate way to take ownership of your personal contribution to climate change. This is where my application will come in.
 
-My tool is for every environmentally cautious person to help them monitor their carbon footprint and reduce it. Small changes from everyone can add up to great benefits.
+ReduceYourFootprint is for every environmentally cautious person to help them monitor their carbon footprint and reduce it. Small changes from everyone can add up to great benefits.
 
 ## How my tool will help
 
-The first step into reducing a person's or a family's carbon footprint will be to learn about their current habits and then make suggestions for improvement in the areas of food habits, energy consumptions, fuel consumption, and reusage and recycling habits.
+The first step to reducing a person's or a family's carbon footprint will be to learn about their current habits. Then, the tool can make personalized suggestions for improvement in the areas of food habits, energy consumptions, fuel consumption, and reusage and recycling habits.
 
-The current habits of the app user will be monitored for a few weeks and users will need to manually input the data into the tool. Data that will be collected for a person or a family will include size of the family, type and amount of energy they consume, recycling habits, diet types, their main mode of commute, type and number of vehicles they own.
+The current habits of the app user will be monitored for a few weeks as users manually input the data into the tool. Data that will be collected for a person or a family will include the size of the family, the type and amount of energy they consume, their recycling habits, their diet, their main mode of commute, and the type and number of vehicles they own.
 
-After anaylzing the user's data, personalized suggestions will be made to help reduce their carbon footprint. Some examples of such suggestions:
-1. Alternatives to driving -- walk or ride bike to work for a couple of days in a week; Carpool; Switch to low carbon vehicle; Combine errands to make fewer trips.
-2. Eat locally-produced and organic food; Cut meat consumption or become a weekday vegetarian.
-3. Switch to clean energy sources; be mindful of water and power consumption
-4. Reuse and recycle; Make simple changes like carry a reusable grocery bag; Switch to reusable food containers and reusable produce bags.
+After analyzing the user's data, personalized suggestions will be made to help them reduce their carbon footprint. Some examples of such suggestions are:
+1. Alternatives to driving -- walk or ride a bike to work a couple of days in a week; Carpool; Switch to a low-carbon vehicle; Combine errands to make fewer trips
+2. Eat locally-produced and organic food; Cut meat consumption or become a weekday vegetarian
+3. Switch to clean energy sources; Be mindful of water and power consumption
+4. Reuse and recycle; Make simple changes like carrying a reusable grocery bag; Switch to reusable food containers and reusable produce bags.
 These are just a few examples and depending on a person's habits, these changes could be personalized.
 
 ## Conclusion
 
-There's certainly scope for improvements to this approach. And as part of future work we can get feedback on the changes the users have made to their daily lives and alter the suggestions accordingly. I agree that people may not be able carry out every single suggestion made by the app, but I believe baby steps could be the best way towards reducing emissions and global warming instead of trying to strike a huge bargain among world powers. Incremental steps can make serious progress towards addressing the causes of climate change. And I strongly believe that my tool can help with this cause.
+There's certainly scope for improvements to this approach. As part of future work, we can get feedback on the changes the users have made to their daily lives and alter the suggestions accordingly. People may not be able carry out every single suggestion made by the app, but baby steps could be the best way towards reducing emissions and global warming instead of relying on national leaders and policymakers to solve the problem. Incremental steps can make serious progress towards addressing the causes of climate change and my tool can help with this cause.
